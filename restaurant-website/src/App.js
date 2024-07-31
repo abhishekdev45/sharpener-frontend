@@ -1,14 +1,16 @@
 // src/App.js
 import React from 'react';
 import Header from './components/Layout/Header';
-import MealsSummary from './components/Meals/MealsSummary';
+import Meals from './components/Meals/Meals';
 
 
 function App() {
   return (
     <div>
       <Header />
-      <MealsSummary></MealsSummary>
+      <main>
+                <Meals />
+      </main>
       {/* Other components go here */}
     </div>
   );
