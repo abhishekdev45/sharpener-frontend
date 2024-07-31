@@ -1,0 +1,33 @@
+.container {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+button[type="submit"] {
+  margin-top: 15px;
+}
+
+.product-list {
+  margin-top: 30px;
+}
+
+.modal-content {
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  margin-right: 10px;
+}
