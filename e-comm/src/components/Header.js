@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, Container, Badge } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 import Cart from './Cart';
 import { useCart } from '../CartContext';
 
@@ -17,13 +18,13 @@ const Header = () => {
     <>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="/">The Generics</Navbar.Brand>
+          <Navbar.Brand as={NavLink} to="/">The Generics</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto" style={{ fontSize: '1.2rem' }}>
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/store">Store</Nav.Link>
-              <Nav.Link href="/about">About</Nav.Link>
+              <Nav.Link as={NavLink} to="/">Home</Nav.Link>
+              <Nav.Link as={NavLink} to="/store">Store</Nav.Link>
+              <Nav.Link as={NavLink} to="/about">About</Nav.Link>
               <Nav.Link onClick={handleCartClick}>
                 <FaShoppingCart size={24} />
                 {cartItemCount > 0 && (
