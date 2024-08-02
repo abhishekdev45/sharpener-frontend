@@ -1,0 +1,23 @@
+/* src/styles/Custom.css */
+
+.carousel-item img {
+    width: 100%; /* Ensure image takes the full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the container without stretching */
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+  }
+  
+  .product-image-container {
+    position: relative;
+    overflow: hidden; /* Hide overflow */
+    width: 100%; /* Full width */
+  }
+  
+  .product-image {
+    transition: transform 0.3s ease;
+  }
+  
+  .product-image:hover {
+    transform: scale(1.2); /* Zoom effect on hover */
+  }
+  

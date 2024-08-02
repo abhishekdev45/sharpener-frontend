@@ -1,5 +1,8 @@
+// src/components/ProductCard.js
+
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import { useCart } from '../CartContext';
 
 const ProductCard = ({ product }) => {
@@ -10,14 +13,21 @@ const ProductCard = ({ product }) => {
   };
 
   return (
+    
     <Card style={{ width: '18rem' }} className="m-3">
-      <Card.Img variant="top" src={product.image} />
+        <NavLink to={`/product/${product.id}`}>
+        <Card.Img variant="top" src={product.images[0]} />
+        </NavLink>
       <Card.Body>
         <Card.Title>{product.title}</Card.Title>
         <Card.Text>${product.price}</Card.Text>
-        <Button variant="primary" onClick={addToCart}>Add to Cart</Button>
+       
+        <Button variant="primary" onClick={addToCart}>
+          Add to Cart
+        </Button>
       </Card.Body>
     </Card>
+    
   );
 };
 

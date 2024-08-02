@@ -1,39 +1,128 @@
 [
-    {
-      "id": 1,
-      "title": "Album 1",
-      "image": "https://tse2.mm.bing.net/th?id=OIP.7VRXG0fLMkbT2CfQ6Kj4YAHaHa&pid=Api&P=0&h=180",
-      "price": 10
-    },
-    {
-      "id": 2,
-      "title": "Album 2",
-      "image": "https://tse2.mm.bing.net/th?id=OIP.F7umeZD0INtcavsxkhvJIwHaHa&pid=Api&P=0&h=180",
-      "price": 15
-    },
-    {
-      "id": 3,
-      "title": "Album 3",
-      "image": "https://tse3.mm.bing.net/th?id=OIP.JUOFHQjo4Ljlkq0t2PKdzQHaHa&pid=Api&P=0&h=180",
-      "price": 20
-    },
-    {
-      "id": 4,
-      "title": "Album 4",
-      "image": "https://tse1.mm.bing.net/th?id=OIP.VonyVhpFSgK84T3-DjdXwgHaG-&pid=Api&P=0&h=180",
-      "price": 25
-    },
-    {
-      "id": 5,
-      "title": "T-Shirt",
-      "image": "https://tse1.mm.bing.net/th?id=OIP.ouGrMdSxiz7zdHtcqikoWQHaHa&pid=Api&P=0&h=180",
-      "price": 30
-    },
-    {
-      "id": 6,
-      "title": "Coffee Mug",
-      "image": "https://tse4.mm.bing.net/th?id=OIP.bMw1d2EdgdMoSbhX3-k0sQHaHa&pid=Api&P=0&h=180",
-      "price": 10
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": "Album 1",
+    "price": 10,
+    "description": "A classic album with timeless tracks.",
+    "images": [
+      "https://tse2.mm.bing.net/th?id=OIP.7VRXG0fLMkbT2CfQ6Kj4YAHaHa&pid=Api&P=0&h=180",
+      "https://via.placeholder.com/600x400?text=Album+1+Image+2",
+      "https://via.placeholder.com/600x400?text=Album+1+Image+3"
+    ],
+    "reviews": [
+      {
+        "user": "Alice",
+        "comment": "Great album! Worth every penny."
+      },
+      {
+        "user": "Bob",
+        "comment": "Enjoyed the music, but the packaging could be better."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Album 2",
+    "price": 15,
+    "description": "An album full of new hits and favorites.",
+    "images": [
+      "https://tse2.mm.bing.net/th?id=OIP.F7umeZD0INtcavsxkhvJIwHaHa&pid=Api&P=0&h=180",
+      "https://via.placeholder.com/600x400?text=Album+2+Image+2",
+      "https://via.placeholder.com/600x400?text=Album+2+Image+3"
+    ],
+    "reviews": [
+      {
+        "user": "Charlie",
+        "comment": "Amazing music quality! A must-have for collectors."
+      },
+      {
+        "user": "Diana",
+        "comment": "The album is good, but the delivery was delayed."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Album 3",
+    "price": 20,
+    "description": "A must-have album with exclusive tracks.",
+    "images": [
+      "https://tse3.mm.bing.net/th?id=OIP.JUOFHQjo4Ljlkq0t2PKdzQHaHa&pid=Api&P=0&h=180",
+      "https://via.placeholder.com/600x400?text=Album+3+Image+2",
+      "https://via.placeholder.com/600x400?text=Album+3+Image+3"
+    ],
+    "reviews": [
+      {
+        "user": "Eve",
+        "comment": "Fantastic album! The tracks are well curated."
+      },
+      {
+        "user": "Frank",
+        "comment": "Good album but overpriced."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Album 4",
+    "price": 25,
+    "description": "An album featuring top hits and rare tracks.",
+    "images": [
+      "https://tse1.mm.bing.net/th?id=OIP.VonyVhpFSgK84T3-DjdXwgHaG-&pid=Api&P=0&h=180",
+      "https://via.placeholder.com/600x400?text=Album+4+Image+2",
+      "https://via.placeholder.com/600x400?text=Album+4+Image+3"
+    ],
+    "reviews": [
+      {
+        "user": "Grace",
+        "comment": "Exceptional album with high-quality sound."
+      },
+      {
+        "user": "Hank",
+        "comment": "Great music, but the album cover art is not appealing."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "T-Shirt",
+    "price": 30,
+    "description": "A comfortable t-shirt for everyday wear.",
+    "images": [
+      "https://tse1.mm.bing.net/th?id=OIP.ouGrMdSxiz7zdHtcqikoWQHaHa&pid=Api&P=0&h=180",
+      "https://via.placeholder.com/600x400?text=T-Shirt+Image+2",
+      "https://via.placeholder.com/600x400?text=T-Shirt+Image+3"
+    ],
+    "reviews": [
+      {
+        "user": "Ian",
+        "comment": "Great quality and fits well."
+      },
+      {
+        "user": "Judy",
+        "comment": "Comfortable but the color faded after washing."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Coffee Mug",
+    "price": 10,
+    "description": "A stylish coffee mug perfect for your morning brew.",
+    "images": [
+      "https://tse4.mm.bing.net/th?id=OIP.bMw1d2EdgdMoSbhX3-k0sQHaHa&pid=Api&P=0&h=180",
+      "https://via.placeholder.com/600x400?text=Coffee+Mug+Image+2",
+      "https://via.placeholder.com/600x400?text=Coffee+Mug+Image+3"
+    ],
+    "reviews": [
+      {
+        "user": "Kyle",
+        "comment": "Nice mug, sturdy and well-designed."
+      },
+      {
+        "user": "Laura",
+        "comment": "The mug is great, but it arrived chipped."
+      }
+    ]
+  }
+]
