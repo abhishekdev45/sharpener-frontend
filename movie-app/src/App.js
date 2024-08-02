@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState,useRef, useEffect, useCallback, useMemo } from 'react';
 import axios from 'axios';
 import MoviesList from './components/MoviesList';
 import './App.css';
@@ -10,16 +10,7 @@ function App() {
   const [isRetrying, setIsRetrying] = useState(false);
   const retryInterval = useRef(null);
 
-  useEffect(() => {
-   
-    return () => {
-      if (retryInterval.current) {
-        clearInterval(retryInterval.current);
-      }
-    };
-  }, []);
-
-  const fetchMoviesHandler = async () => {
+  const fetchMoviesHandler = useCallback(async () => {
     setIsLoading(true);
     setError(null);
     try {
@@ -44,13 +35,27 @@ function App() {
         retryInterval.current = setInterval(fetchMoviesHandler, 5000);
       }
     }
-  };
+  }, []);
 
-  const cancelRetryHandler = () => {
+  const cancelRetryHandler = useCallback(() => {
     setIsRetrying(false);
     clearInterval(retryInterval.current);
     retryInterval.current = null;
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchMoviesHandler();
+
+    return () => {
+      if (retryInterval.current) {
+        clearInterval(retryInterval.current);
+      }
+    };
+  }, [fetchMoviesHandler]);
+
+  const renderedMoviesList = useMemo(() => {
+    return <MoviesList movies={movies} />;
+  }, [movies]);
 
   return (
     <React.Fragment>
@@ -61,7 +66,7 @@ function App() {
       <section>
         {isLoading && <p>Loading...</p>}
         {!isLoading && error && <p>{error}</p>}
-        {!isLoading && !error && <MoviesList movies={movies} />}
+        {!isLoading && !error && renderedMoviesList}
       </section>
     </React.Fragment>
   );
