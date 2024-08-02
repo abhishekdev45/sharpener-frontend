@@ -9,12 +9,12 @@ import Store from './pages/Store';
 import About from './pages/About';
 import ProductPage from './pages/ProductPage'; 
 import LoginPage from './pages/Login';
-import { AuthProvider } from './AuthContext';
+import AuthContextProvider from './AuthContext';
 
 const App = () => {
   return (
 
-    <AuthProvider>
+    <AuthContextProvider>
     <Router>
       <Header />
       <Routes>
@@ -26,7 +26,7 @@ const App = () => {
       </Routes>
       <Footer />
     </Router>
-    </AuthProvider>
+    </AuthContextProvider>
   );
 };
 

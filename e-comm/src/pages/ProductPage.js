@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import products from "../data/products.json";
 import { useCart } from "../CartContext";
 import "./Custom.css"; 
+import withAuth from '.././withAuth';
 
 const ProductPage = () => {
   const { dispatch } = useCart();
@@ -66,4 +67,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default withAuth(ProductPage);
