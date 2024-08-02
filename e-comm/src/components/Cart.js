@@ -26,7 +26,7 @@ const Cart = ({ show, handleClose }) => {
             <ListGroup.Item key={index}>
               <Row>
                 <Col md={2}>
-                  <Image src={item.image} alt={item.title} fluid rounded />
+                  <Image src={item.images[0]} alt={item.title} fluid rounded />
                 </Col>
                 <Col md={6}>
                   <h5>{item.title}</h5>

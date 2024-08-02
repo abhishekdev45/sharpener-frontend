@@ -9,12 +9,12 @@ import Store from './pages/Store';
 import About from './pages/About';
 import ProductPage from './pages/ProductPage'; 
 import LoginPage from './pages/Login';
-import AuthContextProvider from './AuthContext';
+import ContactUs from './pages/ContactUs';
 
 const App = () => {
   return (
 
-    <AuthContextProvider>
+    
     <Router>
       <Header />
       <Routes>
@@ -22,11 +22,12 @@ const App = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/store" element={<Store />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<ContactUs />} />
         <Route path="/product/:productId" element={<ProductPage />} /> {/* Add route for product details */}
       </Routes>
       <Footer />
     </Router>
-    </AuthContextProvider>
+    
   );
 };
 
