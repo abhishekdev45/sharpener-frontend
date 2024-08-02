@@ -3,22 +3,17 @@ import { Modal, Button, ListGroup, Image, Row, Col } from "react-bootstrap";
 import { useCart } from "../CartContext";
 
 const Cart = ({ show, handleClose }) => {
-  const { state, dispatch } = useCart();
+  const { state, removeFromCart } = useCart();
   const cartItems = state.cartItems;
-
-  const removeItem = (index) => {
-    dispatch({ type: "REMOVE_FROM_CART", payload: index });
-  };
-
-  const totalAmount = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
 
   const handlePurchase = () => {
     alert("Purchase successful!");
     // Add further purchase logic here
   };
+  const totalAmount = cartItems.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
 
   return (
     <Modal show={show} onHide={handleClose}>
@@ -39,7 +34,7 @@ const Cart = ({ show, handleClose }) => {
                   <p>Quantity: {item.quantity}</p>
                 </Col>
                 <Col md={4} className="text-right">
-                  <Button variant="danger" onClick={() => removeItem(index)}>
+                  <Button variant="danger" onClick={() => removeFromCart(index)}>
                     Remove
                   </Button>
                 </Col>
