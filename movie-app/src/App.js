@@ -1,6 +1,7 @@
-import React, { useState,useRef, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import axios from 'axios';
 import MoviesList from './components/MoviesList';
+import AddMovieForm from './components/AddMovieForm';
 import './App.css';
 
 function App() {
@@ -43,6 +44,10 @@ function App() {
     retryInterval.current = null;
   }, []);
 
+  const addMovieHandler = useCallback((movie) => {
+    setMovies((prevMovies) => [...prevMovies, movie]);
+  }, []);
+
   useEffect(() => {
     fetchMoviesHandler();
 
@@ -59,6 +64,9 @@ function App() {
 
   return (
     <React.Fragment>
+      <section>
+        <AddMovieForm onAddMovie={addMovieHandler} />
+      </section>
       <section>
         <button onClick={fetchMoviesHandler}>Fetch Movies</button>
         {isRetrying && <button onClick={cancelRetryHandler}>Cancel Retry</button>}
