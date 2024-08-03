@@ -23,7 +23,10 @@ const Signup = () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       toast.success("User has successfully signed up");
-      navigate('/login');
+      setTimeout(() => {
+        navigate('/login');
+      }, 2000)
+      
     } catch (error) {
       toast.error(error.message);
     }

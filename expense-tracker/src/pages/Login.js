@@ -19,12 +19,17 @@ const Login = () => {
       const user = userCredential.user;
 
       if (user.emailVerified) {
-        // Redirect to profile completion page if profile is incomplete
+        toast.success("Login successful");
         const profileComplete = false; // Replace with actual profile check
         if (!profileComplete) {
-          navigate('/complete-profile');
+            setTimeout(()=> {
+                navigate('/complete-profile');
+            }, 2000)
+          
         } else {
-          navigate('/home'); // Redirect to the main app/dashboard
+            setTimeout(()=> {
+                navigate('/home');
+            }, 2000)
         }
       } else {
         toast.error("Please verify your email before logging in.");
