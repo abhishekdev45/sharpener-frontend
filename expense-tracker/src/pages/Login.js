@@ -16,10 +16,19 @@ const Login = () => {
     e.preventDefault();
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const token = await userCredential.user.getIdToken();
-      localStorage.setItem('token', token);
-      toast.success("User has successfully logged in");
-      navigate('/home');
+      const user = userCredential.user;
+
+      if (user.emailVerified) {
+        // Redirect to profile completion page if profile is incomplete
+        const profileComplete = false; // Replace with actual profile check
+        if (!profileComplete) {
+          navigate('/complete-profile');
+        } else {
+          navigate('/home'); // Redirect to the main app/dashboard
+        }
+      } else {
+        toast.error("Please verify your email before logging in.");
+      }
     } catch (error) {
       toast.error(error.message);
     }

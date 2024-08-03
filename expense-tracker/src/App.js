@@ -1,19 +1,27 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Signup from './pages/Signup';
+import { AuthProvider } from './context/AuthContext';
 import Login from './pages/Login';
-import Home from './pages/Home';
+import Signup from './pages/Signup';
+import CompleteProfile from './pages/CompleteProfile';
+import Home from './pages/Home'; 
+import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Home />} />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route element={<ProtectedRoute redirectTo="/login" />}>
+            <Route path="/complete-profile" element={<CompleteProfile />} />
+            <Route path="/home" element={<Home />} />
+          </Route>
+          {/* Add other routes as needed */}
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 };
 
