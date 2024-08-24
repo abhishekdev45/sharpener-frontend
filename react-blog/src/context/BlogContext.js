@@ -9,7 +9,6 @@ export const BlogProvider = ({ children }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const fetchBlogs = async () => {
-    console.log("hi" , process.env.REACT_APP_CRUD_CRUD_API_KEY)
     const response = await axios.get(`https://crudcrud.com/api/${process.env.REACT_APP_CRUD_CRUD_API_KEY}/blogs`);
     
     setBlogs(response.data);
