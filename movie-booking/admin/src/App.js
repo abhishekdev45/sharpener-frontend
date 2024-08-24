@@ -1,8 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import Sidebar from "./components/Sidebar";
 import AddCategory from "./pages/AddCategory";
+import ViewMovies from "./pages/ViewMovies";
 import AddMovie from "./pages/AddMovie";
 import ManageShowtime from "./pages/ManageShowtime";
 import BookedMovies from "./pages/BookedMovies";
@@ -39,6 +42,14 @@ const App = () => {
               }
             />
             <Route
+              path="/movies"
+              element={
+                <PrivateRoute>
+                  <ViewMovies />
+                </PrivateRoute>
+              }
+            />
+            <Route
               path="/manage-showtime"
               element={
                 <PrivateRoute>
@@ -58,6 +69,7 @@ const App = () => {
           </Routes>
         </div>
       </div>
+      <ToastContainer />
     </Router>
   );
 };

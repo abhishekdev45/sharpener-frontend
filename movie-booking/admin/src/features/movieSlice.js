@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { addMovie, getMovies, updateMovieShowtimes } from '../services/movieService';
+import { toast } from 'react-toastify';
 
 export const fetchMovies = createAsyncThunk('movies/fetch', async () => {
   const response = await getMovies();
@@ -8,12 +9,14 @@ export const fetchMovies = createAsyncThunk('movies/fetch', async () => {
 
 export const createMovie = createAsyncThunk('movies/create', async (movieData) => {
   const response = await addMovie(movieData);
+  toast.success("Movie added successfully!");
   return response;
 });
 
 // New async thunk to update movie showtimes
 export const modifyMovieShowtimes = createAsyncThunk('movies/modifyShowtimes', async ({ id, showtimes }) => {
   const response = await updateMovieShowtimes(id, showtimes);
+  toast.success("Showtimes modified successfully!");
   return { id, showtimes };
 });
 

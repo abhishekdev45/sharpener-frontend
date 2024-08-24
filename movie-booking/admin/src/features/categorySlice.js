@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { addCategory, getCategories } from '../services/categoryService';
+import { toast } from 'react-toastify';
 
 export const fetchCategories = createAsyncThunk('categories/fetch', async () => {
   const response = await getCategories();
@@ -8,6 +9,7 @@ export const fetchCategories = createAsyncThunk('categories/fetch', async () => 
 
 export const createCategory = createAsyncThunk('categories/create', async (categoryData) => {
   const response = await addCategory(categoryData);
+  toast.success("Category added successfully!");
   return response;
 });
 

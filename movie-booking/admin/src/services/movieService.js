@@ -14,7 +14,6 @@ export const getMovies = async () => {
   return response.data;
 };
 
-// New function to update showtimes
 export const updateMovieShowtimes = async (movieId, showtimes) => {
   const url = `${API_BASE_URL}/movies/${movieId}.json`;
   const response = await axios.patch(url, { showtimes });

@@ -16,7 +16,7 @@ const ManageShowtime = () => {
 
   const handleShowtimeChange = (movieId, index, value) => {
     setEditedMovies((prevState) => {
-      const updatedShowtimes = prevState[movieId]?.showtimes || [...movies.find(movie => movie.id === movieId).showtimes];
+      const updatedShowtimes = [...prevState[movieId]?.showtimes || movies.find(movie => movie.id === movieId).showtimes];
       updatedShowtimes[index] = value;
       return {
         ...prevState,
@@ -30,8 +30,8 @@ const ManageShowtime = () => {
 
   const addShowtime = (movieId) => {
     setEditedMovies((prevState) => {
-      const updatedShowtimes = prevState[movieId]?.showtimes || [...movies.find(movie => movie.id === movieId).showtimes];
-      updatedShowtimes.push('');
+      const updatedShowtimes = [...prevState[movieId]?.showtimes || movies.find(movie => movie.id === movieId).showtimes];
+      updatedShowtimes.push('');  // Add a single blank showtime
       return {
         ...prevState,
         [movieId]: {
@@ -44,7 +44,7 @@ const ManageShowtime = () => {
 
   const removeShowtime = (movieId, index) => {
     setEditedMovies((prevState) => {
-      const updatedShowtimes = prevState[movieId]?.showtimes || [...movies.find(movie => movie.id === movieId).showtimes];
+      const updatedShowtimes = [...prevState[movieId]?.showtimes || movies.find(movie => movie.id === movieId).showtimes];
       updatedShowtimes.splice(index, 1);
       return {
         ...prevState,

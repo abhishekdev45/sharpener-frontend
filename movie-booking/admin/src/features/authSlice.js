@@ -1,8 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { loginAdmin } from '../services/authService';
+import { toast } from 'react-toastify';
 
 export const login = createAsyncThunk('auth/login', async (credentials) => {
   const response = await loginAdmin(credentials.email, credentials.password);
+  toast.success("Login successfull!");
   return response;
 });
 
