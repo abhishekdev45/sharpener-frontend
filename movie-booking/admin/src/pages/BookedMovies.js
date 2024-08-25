@@ -26,14 +26,20 @@ const BookedMovies = () => {
             </tr>
           </thead>
           <tbody>
-            {bookedMovies.map((booking) => (
-              <tr key={booking.id}>
-                <td className="py-2 px-4 border-t">{booking.userName}</td>
-                <td className="py-2 px-4 border-t">{booking.email}</td>
-                <td className="py-2 px-4 border-t">{booking.movieName}</td>
-                <td className="py-2 px-4 border-t">{booking.showtime}</td>
+            {bookedMovies && bookedMovies.length > 0 ? (
+              bookedMovies.map((booking) => (
+                <tr key={booking.id}>
+                  <td className="py-2 px-4 border-t">{booking.name}</td>
+                  <td className="py-2 px-4 border-t">{booking.email}</td>
+                  <td className="py-2 px-4 border-t">{booking.movieName}</td>
+                  <td className="py-2 px-4 border-t">{booking.showtime}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="4" className="py-2 px-4 text-center">No bookings found</td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
       )}
