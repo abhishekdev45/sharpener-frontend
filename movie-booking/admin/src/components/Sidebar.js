@@ -16,7 +16,7 @@ const Sidebar = () => {
 
   const handleLogout = () => {
     dispatch(logout());
-    window.location.href = "/login"; // Redirect to login page after logout
+    window.location.href = "/login";
   };
 
   return (
@@ -25,40 +25,55 @@ const Sidebar = () => {
         <h2 className="text-2xl font-bold mb-8">Admin Panel</h2>
         <NavLink
           to="/add-category"
-          className="flex items-center mb-4 p-2 hover:bg-indigo-600 rounded"
-          activeClassName="bg-indigo-600"
+          className={({ isActive }) =>
+            `flex items-center mb-4 p-2 hover:bg-indigo-600 rounded ${
+              isActive ? "bg-indigo-600" : ""
+            }`
+          }
         >
           <FaListAlt className="mr-2" />
           Add Category
         </NavLink>
         <NavLink
           to="/add-movie"
-          className="flex items-center mb-4 p-2 hover:bg-indigo-600 rounded"
-          activeClassName="bg-indigo-600"
+          className={({ isActive }) =>
+            `flex items-center mb-4 p-2 hover:bg-indigo-600 rounded ${
+              isActive ? "bg-indigo-600" : ""
+            }`
+          }
         >
           <FaFilm className="mr-2" />
           Add Movie
         </NavLink>
         <NavLink
           to="/movies"
-          className="flex items-center mb-4 p-2 hover:bg-indigo-600 rounded"
-          activeClassName="bg-indigo-600"
+          className={({ isActive }) =>
+            `flex items-center mb-4 p-2 hover:bg-indigo-600 rounded ${
+              isActive ? "bg-indigo-600" : ""
+            }`
+          }
         >
           <FaPlay className="mr-2" />
           Current Movies
         </NavLink>
         <NavLink
           to="/manage-showtime"
-          className="flex items-center mb-4 p-2 hover:bg-indigo-600 rounded"
-          activeClassName="bg-indigo-600"
+          className={({ isActive }) =>
+            `flex items-center mb-4 p-2 hover:bg-indigo-600 rounded ${
+              isActive ? "bg-indigo-600" : ""
+            }`
+          }
         >
           <FaClock className="mr-2" />
           Manage Showtime
         </NavLink>
         <NavLink
           to="/booked-movies"
-          className="flex items-center mb-4 p-2 hover:bg-indigo-600 rounded"
-          activeClassName="bg-indigo-600"
+          className={({ isActive }) =>
+            `flex items-center mb-4 p-2 hover:bg-indigo-600 rounded ${
+              isActive ? "bg-indigo-600" : ""
+            }`
+          }
         >
           <FaTicketAlt className="mr-2" />
           Booked Movies

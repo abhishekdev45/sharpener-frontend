@@ -31,7 +31,7 @@ const ManageShowtime = () => {
   const addShowtime = (movieId) => {
     setEditedMovies((prevState) => {
       const updatedShowtimes = [...prevState[movieId]?.showtimes || movies.find(movie => movie.id === movieId).showtimes];
-      updatedShowtimes.push('');  // Add a single blank showtime
+      updatedShowtimes.push('');  
       return {
         ...prevState,
         [movieId]: {

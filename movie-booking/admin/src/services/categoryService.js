@@ -13,3 +13,4 @@ export const getCategories = async () => {
   const response = await axios.get(url);
   return response.data;
 };
+

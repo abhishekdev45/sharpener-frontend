@@ -19,3 +19,9 @@ export const updateMovieShowtimes = async (movieId, showtimes) => {
   const response = await axios.patch(url, { showtimes });
   return response.data;
 };
+
+export const getBookedMovies = async () => {
+  const url = `${API_BASE_URL}/bookings.json`;
+  const response = await axios.get(url);
+  return response.data;
+};
