@@ -1,4 +1,5 @@
 import clientPromise from '../../lib/mongodb';
+import { ObjectId } from 'mongodb';
 
 export default async function handler(req, res) {
   const client = await clientPromise;
@@ -17,12 +18,12 @@ export default async function handler(req, res) {
       break;
     case 'PUT':
       const { id, ...update } = req.body;
-      await collection.updateOne({ _id: id }, { $set: update });
+      await collection.updateOne({ _id: new ObjectId(id) }, { $set: update });
       res.json({ status: 'Task updated' });
       break;
     case 'DELETE':
       const { id: deleteId } = req.body;
-      await collection.deleteOne({ _id: deleteId });
+      await collection.deleteOne({ _id: new ObjectId(deleteId) });
       res.json({ status: 'Task deleted' });
       break;
     default:
